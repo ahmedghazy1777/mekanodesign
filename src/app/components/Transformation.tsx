@@ -3,7 +3,9 @@ import React, { useState } from "react";
 const Transformation = () => {
   const [activeCategory, setActiveCategory] = useState("villa");
 
-  const transformations: any = {
+  const transformations: {
+    [key: string]: { id: number; className: string; image: string }[];
+  } = {
     villa: [
       { id: 1, image: "/villa/1.png", className: "col-span-2 row-span-1" },
       { id: 2, image: "/villa/2.png", className: "col-span-1 row-span-1" },
@@ -62,19 +64,21 @@ const Transformation = () => {
 
       {/* Gallery Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {transformations[activeCategory].map((item: any) => (
-          <div
-            key={item.id}
-            className={`relative group overflow-hidden rounded-lg ${item.className}`}
-          >
-            <img
-              src={item.image}
-              alt={`Transformation ${item.id}`}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
-          </div>
-        ))}
+        {transformations[activeCategory].map(
+          (item: { id: number; image: string; className: string }) => (
+            <div
+              key={item.id}
+              className={`relative group overflow-hidden rounded-lg ${item.className}`}
+            >
+              <img
+                src={item.image}
+                alt={`Transformation ${item.id}`}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
+            </div>
+          )
+        )}
       </div>
 
       {/* Inquiry Button */}

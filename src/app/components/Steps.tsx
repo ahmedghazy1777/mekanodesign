@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Steps = () => {
@@ -55,7 +56,7 @@ const Steps = () => {
           {/* Image Section */}
           <div className="lg:w-1/2">
             <div className="rounded-3xl overflow-hidden shadow-lg">
-              <img
+              <Image
                 src="/steps.jpeg"
                 alt="Luxury Interior Design"
                 className="w-full h-full object-cover"
@@ -67,7 +68,7 @@ const Steps = () => {
         {/* CTA Button */}
         <div className="text-center mt-16">
           <button className="bg-white px-8 py-3 rounded-full border border-gray-200 hover:shadow-md transition-shadow duration-300 text-xs">
-            Let's Begin Your Transformation - Book Your Free Consultation Today!
+            Lets Begin Your Transformation - Book Your Free Consultation Today!
           </button>
         </div>
       </div>

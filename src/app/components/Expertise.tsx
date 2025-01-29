@@ -1,7 +1,18 @@
 import React from "react";
-import { Building2, Building, Store, Wrench } from "lucide-react";
+import { Building2, Building, Store, Wrench, LucideProps } from "lucide-react";
+import Image from "next/image";
 
-const ServiceCard = ({ icon: Icon, title, description }: any) => (
+const ServiceCard = ({
+  icon: Icon,
+  title,
+  description,
+}: {
+  icon: React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+  >;
+  title: string;
+  description: string;
+}) => (
   <div className="flex flex-col gap-3">
     <div className="text-[#D4AF37]">
       <Icon size={24} strokeWidth={1.5} />
@@ -28,7 +39,7 @@ const Expertise = () => {
           {/* Large Image */}
           <div className="md:col-span-1">
             <div className="rounded-3xl overflow-hidden shadow-lg h-full">
-              <img
+              <Image
                 src="/expertise.jpeg"
                 alt="Modern interior with city view"
                 className="w-full h-full object-cover"

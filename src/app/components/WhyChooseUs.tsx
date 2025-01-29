@@ -1,7 +1,15 @@
 import React from "react";
-import { Home, Clock, Users, Diamond } from "lucide-react";
-
-const FeatureItem = ({ icon: Icon, title }: any) => (
+import { Home, Clock, Users, Diamond, LucideProps } from "lucide-react";
+import Image from "next/image";
+const FeatureItem = ({
+  icon: Icon,
+  title,
+}: {
+  icon: React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+  >;
+  title: string;
+}) => (
   <div className="flex flex-col items-center gap-4">
     <div className="text-[#D4AF37]">
       <Icon size={32} strokeWidth={1.5} />
@@ -46,7 +54,7 @@ const WhyChooseUs = () => {
 
           {/* Image Section */}
           <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img
+            <Image
               src="/whychoose.jpeg"
               alt="Luxury interior design"
               className="w-full h-full object-cover"

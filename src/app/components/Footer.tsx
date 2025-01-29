@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
@@ -7,10 +8,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Column - Logo and Text */}
           <div className="max-w-md">
-            <img
-              src="/api/placeholder/120/40"
+            <Image
+              src="/logo.png"
               alt="Mekano Logo"
               className="mb-6"
+              width={120}
+              height={40}
             />
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Mekano Design is an award-winning luxury interior design company

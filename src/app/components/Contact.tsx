@@ -7,7 +7,7 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="bg-white rounded-lg shadow-md p-8">
           <h2 className="text-xl font-medium mb-6">
-            Let's Talk About Your Project
+            Lets Talk About Your Project
           </h2>
 
           <form className="space-y-4">

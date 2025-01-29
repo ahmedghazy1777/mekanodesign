@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 const Testimonials = () => {
   const testimonials = [
     {
@@ -43,14 +43,14 @@ const Testimonials = () => {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial) => (
-            <div>
+          {testimonials.map((testimonial, ind) => (
+            <div key={ind}>
               <div
                 key={testimonial.id}
                 className="bg-[#897111] rounded-lg p-8 backdrop-blur-sm"
               >
                 {/* Quote mark */}
-                <div className="text-4xl text-yellow-600 mb-4">"</div>
+                <div className="text-4xl text-yellow-600 mb-4"></div>
 
                 {/* Quote heading */}
                 <h3 className="text-white text-lg font-medium mb-4">
@@ -65,7 +65,7 @@ const Testimonials = () => {
                 {/* Author info */}
               </div>
               <div className="flex items-center gap-3 mt-7">
-                <img
+                <Image
                   src={testimonial.avatar}
                   alt={testimonial.author}
                   className="w-10 h-10 object-cover rounded-full"
