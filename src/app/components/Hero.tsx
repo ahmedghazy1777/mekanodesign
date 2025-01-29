@@ -3,9 +3,9 @@ import NavBar from "./NavBar";
 
 const Hero = () => {
   return (
-    <div className="relative h-screen w-full hero flex flex-col items-center justify-center space-y-36">
+    <div className="relative h-screen w-full hero flex flex-col items-center justify-between pt-56 py-20 ">
       <div id="hero-top">
-        <div className="text-center space-y-8">
+        <div className="text-center">
           <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] font-normal text-white leading-tight tracking-normal max-w-4xl mx-auto">
             Transform Your <span className="text-white font-bold">Space</span>{" "}
             with
@@ -19,7 +19,7 @@ const Hero = () => {
           </h1>
         </div>
       </div>
-      <div id="hero-bottom">
+      <div id="hero-bottom" className="">
         <div className="flex flex-col items-center  justify-center">
           <p className="text-base md:text-lg text-gray-100/90 max-w-2xl mx-auto font-bold">
             Luxury designs tailored to your style, delivered with precision and
