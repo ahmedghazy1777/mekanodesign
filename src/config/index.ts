@@ -1,1 +1,1 @@
-export const wordpressUrl = "https://pradeepkundekar.com/wp-json/wp/v2";
+export const wordpressUrl = "https://mekanodesign.com/wp-json/wp/v2";
