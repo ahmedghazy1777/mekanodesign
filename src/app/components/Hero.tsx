@@ -1,16 +1,12 @@
-import { wordpressUrl } from "@/config";
-import React from "react";
 import Image from "next/image";
 
-const Hero = async () => {
-  const hero = await fetch(`${wordpressUrl}/hero?acf_format=standard`, {
-    cache: "no-cache",
-  });
-  const heroData = await hero.json();
-  const heroTitle = heroData[0]?.acf?.title || "Default Title";
-  const heroBottom = heroData[0]?.acf?.sub_title || "Default Subtitle";
-  const heroImage = heroData[0]?.acf?.background || "/fallback.jpeg";
+interface HeroProps {
+  heroTitle: string;
+  heroBottom: string;
+  heroImage: string;
+}
 
+const Hero: React.FC<HeroProps> = ({ heroTitle, heroBottom, heroImage }) => {
   return (
     <div className="relative min-h-[100svh] w-full flex flex-col items-center justify-between px-4 py-12 sm:py-20">
       <div className="absolute inset-0 w-full h-full">
@@ -25,9 +21,7 @@ const Hero = async () => {
       </div>
 
       <div className="z-10 text-center text-white max-w-4xl mx-auto mt-52 sm:mt-24">
-        <h1 className="text-4xl sm:text-6xl font-semibold tracking-wide">
-          {heroTitle}
-        </h1>
+        <h1 className="text-4xl sm:text-6xl font-semibold">{heroTitle}</h1>
       </div>
 
       <div className="relative z-10 text-center w-full px-4">

@@ -1,39 +1,35 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Work_Sans } from "next/font/google";
-
-const workSans = Work_Sans({
-  subsets: ["latin"],
-  variable: "--font-work-sans",
-  display: "swap",
-});
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+const workSans = localFont({
   variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+  weight: "400",
+  src: "./fonts/Worksans.woff2",
 });
 
 export const metadata: Metadata = {
   title: "MekanoDesign",
   description: "MekanoDesign",
+  viewport: "width=device-width, initial-scale=1",
+  themeColor: "#C9AE17",
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} antialiased font-work-sans`}
-      >
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/Worksans.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className={`${workSans.variable} antialiased font-work-sans`}>
         {children}
       </body>
     </html>

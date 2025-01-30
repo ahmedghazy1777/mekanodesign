@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function NavBar() {
@@ -119,12 +118,9 @@ export default function NavBar() {
       </div>
 
       {/* CTA Button */}
-      <Button
-        variant="outline"
-        className="border-white text-white bg-transparent hover:bg-white hover:text-black transition-colors"
-      >
+      <button className="border-white rounded-md border-2 px-4 py-2 text-white bg-transparent hover:bg-white hover:text-black transition-colors">
         Explore Now
-      </Button>
+      </button>
     </nav>
   );
 }
