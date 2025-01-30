@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import About from "./components/About";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Expertise from "./components/Expertise";
-import Transformation from "./components/Transformation";
+// import Transformation from "./components/Transformation";
 import Steps from "./components/Steps";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
@@ -59,70 +59,70 @@ async function getHeroData(): Promise<HeroData> {
     };
   }
 }
-const getTransformationData = async () => {
-  try {
-    const villas = await fetch(
-      `${wordpressUrl}/villa-images?acf_format=standard`,
-      {
-        next: {
-          revalidate: 0,
-        },
-      }
-    );
-    const villasData = await villas.json();
-    const offices = await fetch(
-      `${wordpressUrl}/office-images?acf_format=standard`,
-      {
-        next: {
-          revalidate: 0,
-        },
-      }
-    );
-    const officesData = await offices.json();
-    const showrooms = await fetch(
-      `${wordpressUrl}/showroom-images?acf_format=standard`,
-      {
-        next: {
-          revalidate: 0,
-        },
-      }
-    );
-    const showroomsData = await showrooms.json();
-    return {
-      villas: [
-        villasData[0].acf?.image1,
-        villasData[0].acf?.image2,
-        villasData[0].acf?.image3,
-        villasData[0].acf?.image4,
-        villasData[0].acf?.image5,
-        villasData[0].acf?.image6,
-      ],
-      offices: [
-        officesData[0].acf?.image1,
-        officesData[0].acf?.image2,
-        officesData[0].acf?.image3,
-        officesData[0].acf?.image4,
-        officesData[0].acf?.image5,
-        officesData[0].acf?.image6,
-      ],
-      showrooms: [
-        showroomsData[0].acf?.image1,
-        showroomsData[0].acf?.image2,
-        showroomsData[0].acf?.image3,
-        showroomsData[0].acf?.image4,
-        showroomsData[0].acf?.image5,
-        showroomsData[0].acf?.image6,
-      ],
-    };
-  } catch (error) {
-    console.error("Error fetching transformation data:", error);
-    return {
-      villas: [],
-      offices: [],
-      showrooms: [],
-    };
-  }
-};
+// const getTransformationData = async () => {
+//   try {
+//     const villas = await fetch(
+//       `${wordpressUrl}/villa-images?acf_format=standard`,
+//       {
+//         next: {
+//           revalidate: 0,
+//         },
+//       }
+//     );
+//     const villasData = await villas.json();
+//     const offices = await fetch(
+//       `${wordpressUrl}/office-images?acf_format=standard`,
+//       {
+//         next: {
+//           revalidate: 0,
+//         },
+//       }
+//     );
+//     const officesData = await offices.json();
+//     const showrooms = await fetch(
+//       `${wordpressUrl}/showroom-images?acf_format=standard`,
+//       {
+//         next: {
+//           revalidate: 0,
+//         },
+//       }
+//     );
+//     const showroomsData = await showrooms.json();
+//     return {
+//       villas: [
+//         villasData[0].acf?.image1,
+//         villasData[0].acf?.image2,
+//         villasData[0].acf?.image3,
+//         villasData[0].acf?.image4,
+//         villasData[0].acf?.image5,
+//         villasData[0].acf?.image6,
+//       ],
+//       offices: [
+//         officesData[0].acf?.image1,
+//         officesData[0].acf?.image2,
+//         officesData[0].acf?.image3,
+//         officesData[0].acf?.image4,
+//         officesData[0].acf?.image5,
+//         officesData[0].acf?.image6,
+//       ],
+//       showrooms: [
+//         showroomsData[0].acf?.image1,
+//         showroomsData[0].acf?.image2,
+//         showroomsData[0].acf?.image3,
+//         showroomsData[0].acf?.image4,
+//         showroomsData[0].acf?.image5,
+//         showroomsData[0].acf?.image6,
+//       ],
+//     };
+//   } catch (error) {
+//     console.error("Error fetching transformation data:", error);
+//     return {
+//       villas: [],
+//       offices: [],
+//       showrooms: [],
+//     };
+//   }
+// };
 
 // Generate metadata statically
 export async function generateMetadata(): Promise<Metadata> {
