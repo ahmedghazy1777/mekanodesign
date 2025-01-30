@@ -1,20 +1,44 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function NavBar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <nav
-      className="flex items-center fixed top-0 justify-between px-6 py-4 left-0 right-0 z-[1000]"
-      style={{ backgroundColor: "#0005" }}
+      className={`flex items-center fixed top-0 justify-between px-6 left-0 right-0 z-[1000] transition-all duration-300 ${
+        scrolled ? "bg-black/40 backdrop-blur-lg shadow-lg" : "bg-black/30"
+      }`}
     >
       {/* Logo */}
       <Link href="/" className="text-2xl font-bold text-yellow-500">
-        MEKANO
+        <Image
+          src="/logo-golden.png"
+          alt="Logo"
+          width={100}
+          height={100}
+          className=" w-32 h-20 object-contain"
+        />
       </Link>
 
       {/* Navigation Links */}

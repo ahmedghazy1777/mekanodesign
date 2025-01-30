@@ -4,11 +4,13 @@ import Image from "next/image";
 const FeatureItem = ({
   icon: Icon,
   title,
+  description,
 }: {
   icon: React.ForwardRefExoticComponent<
     Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
   >;
   title: string;
+  description: string;
 }) => (
   <div className="flex flex-col items-center gap-4">
     <div className="text-[#D4AF37]">
@@ -17,6 +19,9 @@ const FeatureItem = ({
     <h3 className="text-black text-sm font-medium text-center max-w-[120px]">
       {title}
     </h3>
+    <p className="text-gray-800 text-sm text-center leading-relaxed">
+      {description}
+    </p>
   </div>
 );
 
@@ -40,15 +45,25 @@ const WhyChooseUs = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Features Grid */}
           <div className="grid grid-cols-2 gap-x-8 gap-y-12">
-            <FeatureItem icon={Home} title="Tailored Designs for Every Space" />
-            <FeatureItem icon={Clock} title="Timely Project Completion" />
+            <FeatureItem
+              icon={Home}
+              title="Tailored Designs for Every Space"
+              description="Our designs are crafted to fit your unique style and lifestyle, ensuring every space is a reflection of your personality."
+            />
+            <FeatureItem
+              icon={Clock}
+              title="Timely Project Completion"
+              description="We understand the importance of deadlines. Our projects are completed on time, without compromising on quality."
+            />
             <FeatureItem
               icon={Users}
               title="Expert Designers with Global Experience"
+              description="Our team of designers has a wealth of experience, working with clients from all over the world."
             />
             <FeatureItem
               icon={Diamond}
               title="Premium Materials and Finishes"
+              description="We use only the highest quality materials and finishes, ensuring that your project is a true work of art."
             />
           </div>
 
@@ -58,6 +73,8 @@ const WhyChooseUs = () => {
               src="/whychoose.jpeg"
               alt="Luxury interior design"
               className="w-full h-full object-cover"
+              width={500}
+              height={500}
             />
           </div>
         </div>

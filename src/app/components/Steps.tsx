@@ -60,6 +60,8 @@ const Steps = () => {
                 src="/steps.jpeg"
                 alt="Luxury Interior Design"
                 className="w-full h-full object-cover"
+                width={500}
+                height={500}
               />
             </div>
           </div>
@@ -67,7 +69,7 @@ const Steps = () => {
 
         {/* CTA Button */}
         <div className="text-center mt-16">
-          <button className="bg-white px-8 py-3 rounded-full border border-gray-200 hover:shadow-md transition-shadow duration-300 text-xs">
+          <button className="bg-white px-8 py-3 text-black font-semibold rounded-sm border border-black hover:shadow-md transition-shadow duration-300 text-xs">
             Lets Begin Your Transformation - Book Your Free Consultation Today!
           </button>
         </div>

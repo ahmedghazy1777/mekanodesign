@@ -1,25 +1,27 @@
 import React from "react";
 
 const StatCard = ({ number, text }: { number: string; text: string }) => (
-  <div className="bg-[#897111] flex flex-col items-start justify-center p-4 rounded-lg h-36">
-    <div className="text-3xl font-bold  text-white mb-3">{number}</div>
-    <div className="text-sm text-gray-200 font-medium">{text}</div>
+  <div className="bg-[#897111] flex flex-col items-start justify-center p-4 sm:p-6 rounded-lg min-h-[120px] sm:h-36">
+    <div className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-3">
+      {number}
+    </div>
+    <div className="text-xs sm:text-sm text-gray-200 font-medium">{text}</div>
   </div>
 );
 
 const About = () => {
   return (
-    <main className="relative  about text-white overflow-hidden flex flex-col items-center justify-center h-[80vh]">
-      <div className="relative max-w-6xl mx-auto px-8 py-12">
-        <h1 className="text-4xl font-light mb-12 text-center font-serif">
+    <main className="relative about text-white overflow-hidden flex flex-col items-center justify-center min-h-[600px] sm:min-h-[80vh] py-16 sm:py-24">
+      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl sm:text-4xl font-light mb-8 sm:mb-12 text-center">
           About Mekano Design
         </h1>
 
         {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
           {/* Text Content */}
-          <div className="space-y-6">
-            <p className="text-gray-300 text-sm leading-relaxed">
+          <div className="space-y-4 sm:space-y-6">
+            <p className="text-white text-sm sm:text-base leading-relaxed">
               Founded in 2007, Mekano Design has been a leader in the interior
               design industry, dedicated to transforming spaces into unique and
               inspiring environments. Well over 150 completed projects stand as
@@ -28,7 +30,7 @@ const About = () => {
               that each project reflects our clients lifestyles and aspirations
               while expressing creativity and sophistication.
             </p>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-white text-sm sm:text-base leading-relaxed">
               Our skilled team of designers and architects takes pride in
               understanding the unique mandate and preferences of each project,
               allowing us to create designs that resonate on a personal level.
@@ -39,7 +41,7 @@ const About = () => {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-4 h-fit">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 h-fit mt-4 sm:mt-0">
             <StatCard number="2007" text="Year of Establishment" />
             <StatCard number="80" text="Specialist Staff" />
             <StatCard number="150" text="Completed Project" />

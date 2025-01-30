@@ -43,6 +43,8 @@ const Expertise = () => {
                 src="/expertise.jpeg"
                 alt="Modern interior with city view"
                 className="w-full h-full object-cover"
+                width={500}
+                height={500}
               />
             </div>
           </div>

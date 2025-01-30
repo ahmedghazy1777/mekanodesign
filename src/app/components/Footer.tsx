@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Left Column - Logo and Text */}
           <div className="max-w-md">
             <Image
-              src="/logo.png"
+              src="/logo-golden.png"
               alt="Mekano Logo"
               className="mb-6"
               width={120}
@@ -28,13 +28,13 @@ const Footer = () => {
           <div className="md:flex md:justify-end">
             <div className="max-w-xs w-full">
               <h3 className="text-sm font-medium mb-4">JOIN OUR NEWSLETTER</h3>
-              <div className="flex">
+              <div className="flex flex-col space-y-2">
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="flex-1 bg-transparent border-b border-gray-600 text-white text-sm py-2 focus:outline-none focus:border-white"
+                  className=" bg-white border-b px-2 border-gray-600 text-white text-sm py-2 focus:outline-none focus:border-white"
                 />
-                <button className="ml-4 text-sm text-gray-400 hover:text-white">
+                <button className=" text-sm text-gray-400 hover:text-white font-semibold border py-2 px-4 border-white">
                   Subscribe now
                 </button>
               </div>

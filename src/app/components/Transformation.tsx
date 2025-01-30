@@ -45,6 +45,12 @@ const Transformation = () => {
         <h1 className="text-3xl font-bold mb-4">
           Our Transformations Speak for Themselves
         </h1>
+        <p className="text-gray-800 text-sm text-center leading-relaxed max-w-2xl mx-auto py-4">
+          Our portfolio showcases the diverse range of projects we have
+          completed, from luxurious villas to modern offices and chic showrooms.
+          Each transformation is a testament to our commitment to excellence and
+          creativity.
+        </p>
         <div className="flex justify-center gap-4 mb-6">
           {categories.map((category) => (
             <button

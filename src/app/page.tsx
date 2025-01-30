@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 export default function Home() {
   return (
-    <main className="h-screen">
+    <main className="h-screen font-work-sans">
       <NavBar />
       <Hero />
       <About />

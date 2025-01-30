@@ -50,7 +50,15 @@ const Testimonials = () => {
                 className="bg-[#897111] rounded-lg p-8 backdrop-blur-sm"
               >
                 {/* Quote mark */}
-                <div className="text-4xl text-yellow-600 mb-4"></div>
+                <div className="text-4xl text-yellow-600 mb-4">
+                  <Image
+                    src="/quote.png"
+                    alt="Quote"
+                    width={100}
+                    height={100}
+                    className="w-3 h-3 object-contain"
+                  />
+                </div>
 
                 {/* Quote heading */}
                 <h3 className="text-white text-lg font-medium mb-4">
@@ -69,6 +77,8 @@ const Testimonials = () => {
                   src={testimonial.avatar}
                   alt={testimonial.author}
                   className="w-10 h-10 object-cover rounded-full"
+                  width={500}
+                  height={500}
                 />
                 <div>
                   <div className="text-white font-bold">
