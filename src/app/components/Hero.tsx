@@ -24,8 +24,8 @@ const Hero = async () => {
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto mt-52 sm:mt-24">
-        <h1 className="text-3xl sm:text-4xl md:text-[3.5rem] lg:text-[4rem] font-normal leading-tight tracking-normal px-4">
+      <div className="z-10 text-center text-white max-w-4xl mx-auto mt-52 sm:mt-24">
+        <h1 className="text-4xl sm:text-6xl font-semibold tracking-wide">
           {heroTitle}
         </h1>
       </div>

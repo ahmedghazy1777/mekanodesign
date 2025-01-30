@@ -10,12 +10,6 @@
   font-style: normal;
 } */
 
-.hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/hero.jpeg");
-  background-size: cover;
-}
-
 .about {
   background-image: linear-gradient(
       rgba(239, 191, 4, 0.2),
