@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import About from "./components/About";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Expertise from "./components/Expertise";
-import Transformation from "./components/Transformation";
+// import Transformation from "./components/Transformation";
 import Steps from "./components/Steps";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
