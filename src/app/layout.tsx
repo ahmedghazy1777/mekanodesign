@@ -10,8 +10,6 @@ const workSans = localFont({
 export const metadata: Metadata = {
   title: "MekanoDesign",
   description: "MekanoDesign",
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#C9AE17",
 };
 export default function RootLayout({
   children,

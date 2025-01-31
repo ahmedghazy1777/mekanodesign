@@ -2,62 +2,115 @@
 import React, { useState, useCallback, useMemo } from "react";
 import Image from "next/image";
 
-const Transformation = () => {
+interface TransformationData {
+  villas: string[];
+  offices: string[];
+  showrooms: string[];
+}
+
+const Transformation = ({ villas, offices, showrooms }: TransformationData) => {
   const [activeCategory, setActiveCategory] = useState("villa");
 
-  // Memoize transformations data to prevent recreation on each render
   const transformations = useMemo(
     () => ({
       villa: [
-        { id: 1, image: "/villa/1.webp", className: "col-span-2 row-span-1" },
-        { id: 2, image: "/villa/2.webp", className: "col-span-1 row-span-1" },
-        { id: 3, image: "/villa/3.webp", className: "col-span-1 row-span-1" },
-        { id: 4, image: "/villa/4.webp", className: "col-span-1 row-span-1" },
-        { id: 5, image: "/villa/5.webp", className: "col-span-1 row-span-1" },
-        { id: 6, image: "/villa/6.webp", className: "col-span-2 row-span-1" },
-      ],
-      offices: [
-        { id: 1, image: "/offices/1.webp", className: "col-span-2 row-span-1" },
-        { id: 2, image: "/offices/2.webp", className: "col-span-1 row-span-1" },
-        { id: 3, image: "/offices/3.webp", className: "col-span-1 row-span-1" },
-        { id: 4, image: "/offices/4.webp", className: "col-span-1 row-span-1" },
-        { id: 5, image: "/offices/5.webp", className: "col-span-1 row-span-1" },
-        { id: 6, image: "/offices/6.webp", className: "col-span-2 row-span-1" },
-      ],
-      showrooms: [
         {
           id: 1,
-          image: "/showrooms/1.webp",
+          image: villas[0] || "villa/1.webp",
           className: "col-span-2 row-span-1",
         },
         {
           id: 2,
-          image: "/showrooms/2.webp",
+          image: villas[1] || "villa/2.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 3,
-          image: "/showrooms/3.webp",
+          image: villas[2] || "villa/3.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 4,
-          image: "/showrooms/4.webp",
+          image: villas[3] || "villa/4.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 5,
-          image: "/showrooms/5.webp",
+          image: villas[4] || "villa/5.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 6,
-          image: "/showrooms/6.webp",
+          image: villas[5] || "villa/6.webp",
+          className: "col-span-2 row-span-1",
+        },
+      ],
+      offices: [
+        {
+          id: 1,
+          image: offices[0] || "offices/1.webp",
+          className: "col-span-2 row-span-1",
+        },
+        {
+          id: 2,
+          image: offices[1] || "offices/2.webp",
+          className: "col-span-1 row-span-1",
+        },
+        {
+          id: 3,
+          image: offices[2] || "offices/3.webp",
+          className: "col-span-1 row-span-1",
+        },
+        {
+          id: 4,
+          image: offices[3] || "offices/4.webp",
+          className: "col-span-1 row-span-1",
+        },
+        {
+          id: 5,
+          image: offices[4] || "offices/5.webp",
+          className: "col-span-1 row-span-1",
+        },
+        {
+          id: 6,
+          image: offices[5] || "offices/6.webp",
+          className: "col-span-2 row-span-1",
+        },
+      ],
+      showrooms: [
+        {
+          id: 1,
+          image: showrooms[0] || "showrooms/1.webp",
+          className: "col-span-2 row-span-1",
+        },
+        {
+          id: 2,
+          image: showrooms[1] || "showrooms/2.webp",
+          className: "col-span-1 row-span-1",
+        },
+        {
+          id: 3,
+          image: showrooms[2] || "showrooms/3.webp",
+          className: "col-span-1 row-span-1",
+        },
+        {
+          id: 4,
+          image: showrooms[3] || "showrooms/4.webp",
+          className: "col-span-1 row-span-1",
+        },
+        {
+          id: 5,
+          image: showrooms[4] || "showrooms/5.webp",
+          className: "col-span-1 row-span-1",
+        },
+        {
+          id: 6,
+          image: showrooms[5] || "showrooms/6.webp",
           className: "col-span-2 row-span-1",
         },
       ],
     }),
-    []
+    [villas, offices, showrooms]
   );
 
   const categories = useMemo(
@@ -69,7 +122,6 @@ const Transformation = () => {
     []
   );
 
-  // Separate components for better code splitting and performance
   const CategoryButton = useCallback(
     ({
       label,
