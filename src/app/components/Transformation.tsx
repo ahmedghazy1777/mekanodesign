@@ -48,64 +48,64 @@ const Transformation = ({ villas, offices, showrooms }: TransformationData) => {
       offices: [
         {
           id: 1,
-          image: offices[0] || "office/1.webp",
+          image: offices[0] || "offices/1.webp",
           className: "col-span-2 row-span-1",
         },
         {
           id: 2,
-          image: offices[1] || "office/2.webp",
+          image: offices[1] || "offices/2.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 3,
-          image: offices[2] || "office/3.webp",
+          image: offices[2] || "offices/3.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 4,
-          image: offices[3] || "office/4.webp",
+          image: offices[3] || "offices/4.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 5,
-          image: offices[4] || "office/5.webp",
+          image: offices[4] || "offices/5.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 6,
-          image: offices[5] || "office/6.webp",
+          image: offices[5] || "offices/6.webp",
           className: "col-span-2 row-span-1",
         },
       ],
       showrooms: [
         {
           id: 1,
-          image: showrooms[0] || "showroom/1.webp",
+          image: showrooms[0] || "showrooms/1.webp",
           className: "col-span-2 row-span-1",
         },
         {
           id: 2,
-          image: showrooms[1] || "showroom/2.webp",
+          image: showrooms[1] || "showrooms/2.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 3,
-          image: showrooms[2] || "showroom/3.webp",
+          image: showrooms[2] || "showrooms/3.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 4,
-          image: showrooms[3] || "showroom/4.webp",
+          image: showrooms[3] || "showrooms/4.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 5,
-          image: showrooms[4] || "showroom/5.webp",
+          image: showrooms[4] || "showrooms/5.webp",
           className: "col-span-1 row-span-1",
         },
         {
           id: 6,
-          image: showrooms[5] || "showroom/6.webp",
+          image: showrooms[5] || "showrooms/6.webp",
           className: "col-span-2 row-span-1",
         },
       ],
