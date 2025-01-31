@@ -34,9 +34,12 @@ const Footer = () => {
                   placeholder="Email Address"
                   className=" bg-white border-b px-2 border-gray-600 text-white text-sm py-2 focus:outline-none focus:border-white"
                 />
-                <button className=" text-sm text-gray-400 hover:text-white font-semibold border py-2 px-4 border-white">
+                <a
+                  href="http://mekanodesign.com/"
+                  className=" text-sm text-gray-400 hover:text-white font-semibold border py-2 px-4 border-white"
+                >
                   Subscribe now
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -53,7 +56,10 @@ const Footer = () => {
 
       {/* WhatsApp Button */}
       <div className="fixed bottom-6 right-6">
-        <button className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+        <a
+          href="https://wa.me/971505555555"
+          className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors"
+        >
           <svg
             className="w-6 h-6 text-white"
             viewBox="0 0 24 24"
@@ -61,7 +67,7 @@ const Footer = () => {
           >
             <path d="M20.4,3.6C18.2,1.3,15.2,0,12,0C5.4,0,0,5.4,0,12c0,2.1,0.5,4.2,1.6,6L0,24l6.2-1.6c1.8,1,3.8,1.5,5.8,1.5c6.6,0,12-5.4,12-12C24,8.8,22.7,5.8,20.4,3.6z M12,22c-1.8,0-3.5-0.5-5-1.4l-0.4-0.2L2.9,21.5l1.1-3.7l-0.2-0.4C2.8,15.8,2.2,13.9,2.2,12c0-5.4,4.4-9.8,9.8-9.8c2.6,0,5.1,1,6.9,2.9s2.9,4.3,2.9,6.9C21.8,17.6,17.4,22,12,22z" />
           </svg>
-        </button>
+        </a>
       </div>
     </footer>
   );

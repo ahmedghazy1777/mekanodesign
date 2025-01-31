@@ -29,12 +29,18 @@ const Hero: React.FC<HeroProps> = ({ heroTitle, heroBottom, heroImage }) => {
           {heroBottom}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 sm:mt-12 w-full max-w-2xl mx-auto px-4">
-          <button className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-[#C9AE17] text-white text-sm font-medium rounded hover:bg-yellow-400 transition-colors sm:min-w-[240px]">
+          <a
+            href="http://mekanodesign.com/"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-[#C9AE17] text-white text-sm font-medium rounded hover:bg-yellow-400 transition-colors sm:min-w-[240px]"
+          >
             Book Your Free Consultation Today!
-          </button>
-          <button className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-transparent border border-white text-white text-sm font-medium rounded hover:bg-white/10 transition-colors sm:min-w-[240px]">
+          </a>
+          <a
+            href="http://mekanodesign.com/"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-transparent border border-white text-white text-sm font-medium rounded hover:bg-white/10 transition-colors sm:min-w-[240px]"
+          >
             Learn more
-          </button>
+          </a>
         </div>
       </div>
     </div>

@@ -1,7 +1,11 @@
 import React from "react";
 import { Building2, Building, Store, Wrench, LucideProps } from "lucide-react";
 import Image from "next/image";
-
+import { ExpertiseData, ExpertiseImageData } from "@/api/data";
+interface ExpertiseProps {
+  expertiseData: ExpertiseData[];
+  expertiseImageData: ExpertiseImageData;
+}
 const ServiceCard = ({
   icon: Icon,
   title,
@@ -27,7 +31,14 @@ const ServiceCard = ({
   </div>
 );
 
-const Expertise = () => {
+interface ExpertiseProps {
+  expertiseData: ExpertiseData[];
+  expertiseImageData: ExpertiseImageData;
+}
+
+const Expertise = ({ expertiseData, expertiseImageData }: ExpertiseProps) => {
+  const icons = [Building2, Building, Store, Wrench];
+
   return (
     <div className="expertise py-16 px-4">
       <div className="max-w-6xl mx-auto">
@@ -40,7 +51,7 @@ const Expertise = () => {
           <div className="md:col-span-1">
             <div className="rounded-3xl overflow-hidden shadow-lg h-full">
               <Image
-                src="/expertise.jpeg"
+                src={expertiseImageData.image}
                 alt="Modern interior with city view"
                 className="w-full h-full object-cover"
                 width={500}
@@ -51,29 +62,14 @@ const Expertise = () => {
 
           {/* Services Grid */}
           <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ServiceCard
-              icon={Building2}
-              title="Residential Interior Design"
-              description="From color schemes and lighting to textures and finishes, our designs are a testament to the meticulous attention to detail."
-            />
-
-            <ServiceCard
-              icon={Building}
-              title="Office & Commercial Spaces"
-              description="From color schemes and lighting to textures and finishes, our designs are a testament to the meticulous attention to detail."
-            />
-
-            <ServiceCard
-              icon={Store}
-              title="Retail & Hospitality Design"
-              description="From color schemes and lighting to textures and finishes, our designs are a testament to the meticulous attention to detail."
-            />
-
-            <ServiceCard
-              icon={Wrench}
-              title="Renovations & Fitout"
-              description="From color schemes and lighting to textures and finishes, our designs are a testament to the meticulous attention to detail."
-            />
+            {expertiseData.map((item, index) => (
+              <ServiceCard
+                key={item.id}
+                icon={icons[index % icons.length]}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
           </div>
         </div>
       </div>

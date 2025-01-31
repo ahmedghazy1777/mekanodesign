@@ -43,7 +43,7 @@ const Contact = () => {
               />
             </div>
 
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-4 gap-2 mb-20">
               <select className="col-span-1 p-3 border border-gray-200 rounded focus:outline-none focus:border-yellow-500">
                 <option value="+971">🇦🇪 +971</option>
               </select>
@@ -54,12 +54,12 @@ const Contact = () => {
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full bg-yellow-500 text-white py-3 rounded hover:bg-yellow-600 transition-colors duration-300"
+            <a
+              href="http://mekanodesign.com/"
+              className="w-full px-20 bg-yellow-500  text-white py-3 rounded hover:bg-yellow-600 transition-colors duration-300"
             >
               Enquire Now
-            </button>
+            </a>
           </form>
         </div>
 

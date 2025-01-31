@@ -1,4 +1,5 @@
 import React from "react";
+import { AboutData } from "@/api/data";
 
 const StatCard = ({ number, text }: { number: string; text: string }) => (
   <div className="bg-[#897111] flex flex-col items-start justify-center p-4 sm:p-6 rounded-lg min-h-[120px] sm:h-36">
@@ -9,7 +10,11 @@ const StatCard = ({ number, text }: { number: string; text: string }) => (
   </div>
 );
 
-const About = () => {
+interface AboutProps {
+  aboutData: AboutData[];
+}
+
+const About = ({ aboutData }: AboutProps) => {
   return (
     <main className="relative about text-white overflow-hidden flex flex-col items-center justify-center min-h-[600px] sm:min-h-[80vh] py-16 sm:py-24">
       <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,10 +47,9 @@ const About = () => {
 
           {/* Stats Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 h-fit mt-4 sm:mt-0">
-            <StatCard number="2007" text="Year of Establishment" />
-            <StatCard number="80" text="Specialist Staff" />
-            <StatCard number="150" text="Completed Project" />
-            <StatCard number="4" text="Ongoing Project" />
+            {aboutData.map((item) => (
+              <StatCard key={item.id} number={item.value} text={item.title} />
+            ))}
           </div>
         </div>
       </div>
