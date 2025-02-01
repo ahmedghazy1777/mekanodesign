@@ -4,7 +4,9 @@ import { revalidatePath } from "next/cache";
 export const dynamic = "force-dynamic"; // Ensure the route is treated as dynamic
 
 export async function GET(request: NextRequest) {
-  const secret = request.nextUrl.searchParams.get("secret");
+  const secret = request.nextUrl.searchParams.get(
+    "MekanoDesign@3X-?:KSfMNT+@)o%56"
+  );
   if (secret !== "mekanodesign") {
     return NextResponse.json({ error: "Invalid secret" }, { status: 401 });
   }
