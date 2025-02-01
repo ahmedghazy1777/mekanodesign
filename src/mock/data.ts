@@ -1,5 +1,5 @@
 export const heroData = {
-  heroTitle: "Transform Your Space with Premium Interior Design in the UAE.",
+  heroTitle: "Transform Your Space with Premium Interior Design in the UAE112.",
   heroBottom:
     "Luxury designs tailored to your style, delivered with precision and elegance",
   heroImage: "/hero.webp",
@@ -61,7 +61,7 @@ export const steps = [
 export const whyChooseUsData = [
   {
     id: 1,
-    title: "Tailored Designs for Every Space",
+    title: "Hello bro",
     description:
       "Our designs are crafted to fit your unique style and lifestyle, ensuring every space is a reflection of your personality",
   },
