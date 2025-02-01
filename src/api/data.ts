@@ -128,11 +128,19 @@ export async function getAboutData(): Promise<AboutData[]> {
 
     const data = await res.json();
 
-    return data.map((item: any) => ({
-      id: item?.id || 1,
-      title: item?.acf?.title || "Mekano Design",
-      value: item?.acf?.value || "2007",
-    }));
+    return data.map(
+      (item: {
+        id: number;
+        acf: {
+          title: string;
+          value: string;
+        };
+      }) => ({
+        id: item?.id || 1,
+        title: item?.acf?.title || "Mekano Design",
+        value: item?.acf?.value || "2007",
+      })
+    );
   } catch (error) {
     console.error("Error fetching about data:", error);
     return [];
@@ -162,11 +170,19 @@ export async function getWhyChooseUsData(): Promise<WhyChooseUsData[]> {
 
     const data = await res.json();
 
-    return data.map((item: any) => ({
-      id: item.id,
-      title: item.acf.title,
-      description: item.acf.description,
-    }));
+    return data.map(
+      (item: {
+        id: number;
+        acf: {
+          title: string;
+          description: string;
+        };
+      }) => ({
+        id: item.id,
+        title: item.acf.title,
+        description: item.acf.description,
+      })
+    );
   } catch (error) {
     console.error("Error fetching why choose us data:", error);
     return whyChooseUsData;
@@ -193,11 +209,19 @@ export async function getExpertiseData(): Promise<ExpertiseData[]> {
     if (!res.ok) throw new Error("Failed to fetch expertise data");
 
     const data = await res.json();
-    return data.map((item: any) => ({
-      id: item.id,
-      title: item.acf.title,
-      description: item.acf.description,
-    }));
+    return data.map(
+      (item: {
+        id: number;
+        acf: {
+          title: string;
+          description: string;
+        };
+      }) => ({
+        id: item.id,
+        title: item.acf.title,
+        description: item.acf.description,
+      })
+    );
   } catch (error) {
     console.error("Error fetching expertise data:", error);
     return expertiseData;
@@ -273,11 +297,22 @@ export async function getStepsData(): Promise<
     if (!res.ok) throw new Error("Failed to fetch steps data");
     const data = await res.json();
 
-    return data.map((item: any, index: number) => ({
-      title: item.acf.title,
-      description: item.acf.description,
-      number: `0${index + 1}.`,
-    }));
+    return data.map(
+      (
+        item: {
+          id: number;
+          acf: {
+            title: string;
+            description: string;
+          };
+        },
+        index: number
+      ) => ({
+        title: item.acf.title,
+        description: item.acf.description,
+        number: `0${index + 1}.`,
+      })
+    );
   } catch (error) {
     console.error("Error fetching steps data:", error);
     return steps;
@@ -288,14 +323,27 @@ export async function getTestimonialsData(): Promise<TestimonialsData[]> {
     const res = await fetch(`${wordpressUrl}/testimonial?acf_format=standard`);
     if (!res.ok) throw new Error("Failed to fetch testimonials data");
     const data = await res.json();
-    return data.map((item: any, index: number) => ({
-      id: index + 1,
-      title: item.acf.title,
-      description: item.acf.description,
-      full_name: item.acf.full_name,
-      place: item.acf.place,
-      profile_image: item.acf.profile_image,
-    }));
+    return data.map(
+      (
+        item: {
+          acf: {
+            title: string;
+            description: string;
+            full_name: string;
+            place: string;
+            profile_image: string;
+          };
+        },
+        index: number
+      ) => ({
+        id: index + 1,
+        title: item.acf.title,
+        description: item.acf.description,
+        full_name: item.acf.full_name,
+        place: item.acf.place,
+        profile_image: item.acf.profile_image,
+      })
+    );
   } catch (error) {
     console.error("Error fetching testimonials data:", error);
     return testimonials;
