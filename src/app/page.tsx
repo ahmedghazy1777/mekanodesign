@@ -20,6 +20,7 @@ import {
   getStepsImage,
   getWhyChooseUsImage,
   getStepsData,
+  getTestimonialsData,
 } from "@/api/data";
 import Transformation from "./components/Transformation";
 
@@ -37,6 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+export const runtime = "edge";
 export default async function Home() {
   const heroData = await getHeroData();
   const transformationData = await getTransformationData();
@@ -47,6 +49,8 @@ export default async function Home() {
   const stepsImage = await getStepsImage();
   const whyChooseUsImage = await getWhyChooseUsImage();
   const stepsData = await getStepsData();
+  const testimonials = await getTestimonialsData();
+  console.log(testimonials);
   return (
     <main className="h-screen">
       {/* <NavBar /> */}
@@ -63,7 +67,7 @@ export default async function Home() {
         />
         <Transformation {...transformationData} />
         <Steps stepsImage={stepsImage} stepsData={stepsData} />
-        <Testimonials />
+        <Testimonials testimonials={testimonials} />
         <Contact />
         <Footer />
       </Suspense>

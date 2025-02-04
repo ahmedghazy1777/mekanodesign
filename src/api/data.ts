@@ -323,6 +323,7 @@ export async function getTestimonialsData(): Promise<TestimonialsData[]> {
     const res = await fetch(`${wordpressUrl}/testimonial?acf_format=standard`);
     if (!res.ok) throw new Error("Failed to fetch testimonials data");
     const data = await res.json();
+
     return data.map(
       (
         item: {

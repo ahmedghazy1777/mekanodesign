@@ -1,36 +1,15 @@
 import React from "react";
 import Image from "next/image";
-const Testimonials = () => {
-  const testimonials = [
-    {
-      id: 1,
-      quote: "Lorem ipsum dolor sit amet consectetur.",
-      content:
-        "Lorem ipsum dolor sit amet consectetur. Mattis bibendum habitant faucibus sollicitudin nunc diam dictum. At nisi egestas ultrices aenean nulla semper ultricies. Nulla eget eros malesuada sollicitudin. Nulla aute sint quis ma.",
-      author: "Ahmed Ghazy",
-      location: "Dubai",
-      avatar: "/testimonial.png",
-    },
-    {
-      id: 2,
-      quote: "Lorem ipsum dolor sit amet consectetur.",
-      content:
-        "Lorem ipsum dolor sit amet consectetur. Mattis bibendum habitant faucibus sollicitudin nunc diam dictum. At nisi egestas ultrices aenean nulla semper ultricies. Nulla eget eros malesuada sollicitudin. Nulla aute sint quis ma.",
-      author: "Ahmed Ghazy",
-      location: "Dubai",
-      avatar: "/testimonial.png",
-    },
-    {
-      id: 3,
-      quote: "Lorem ipsum dolor sit amet consectetur.",
-      content:
-        "Lorem ipsum dolor sit amet consectetur. Mattis bibendum habitant faucibus sollicitudin nunc diam dictum. At nisi egestas ultrices aenean nulla semper ultricies. Nulla eget eros malesuada sollicitudin. Nulla aute sint quis ma.",
-      author: "Ahmed Ghazy",
-      location: "Dubai",
-      avatar: "/testimonial.png",
-    },
-  ];
-
+export type Testimonial = {
+  id: number;
+  title: string;
+  description: string;
+  full_name: string;
+  place: string;
+  profile_image: string;
+};
+const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => {
+  if (!testimonials) return null;
   return (
     <div className="testimonials min-h-screen py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-900/20 to-transparent opacity-30" />
@@ -43,10 +22,10 @@ const Testimonials = () => {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, ind) => (
+          {testimonials.map((testimonial: Testimonial, ind: number) => (
             <div key={ind}>
               <div
-                key={testimonial.id}
+                key={ind}
                 className="bg-[#897111] rounded-lg p-8 backdrop-blur-sm"
               >
                 {/* Quote mark */}
@@ -62,31 +41,29 @@ const Testimonials = () => {
 
                 {/* Quote heading */}
                 <h3 className="text-white text-lg font-medium mb-4">
-                  {testimonial.quote}
+                  {testimonial.title}
                 </h3>
 
                 {/* Content */}
                 <p className="text-white text-sm leading-relaxed mb-6">
-                  {testimonial.content}
+                  {testimonial.description}
                 </p>
 
                 {/* Author info */}
               </div>
               <div className="flex items-center gap-3 mt-7">
                 <Image
-                  src={testimonial.avatar}
-                  alt={testimonial.author}
+                  src={testimonial.profile_image}
+                  alt={testimonial.full_name}
                   className="w-10 h-10 object-cover rounded-full"
                   width={500}
                   height={500}
                 />
                 <div>
                   <div className="text-white font-bold">
-                    {testimonial.author}
+                    {testimonial.full_name}
                   </div>
-                  <div className="text-white text-sm">
-                    {testimonial.location}
-                  </div>
+                  <div className="text-white text-sm">{testimonial.place}</div>
                 </div>
               </div>
             </div>
